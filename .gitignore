@@ -1,0 +1,10 @@
+node-modules
+coverage
+.DS-Store
+.vscode
+
+# local env files
+.env
+
+#generated
+static
