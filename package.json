@@ -5,8 +5,9 @@
     "scripts": {
         "start": "node app.js",
         "dev": "nodemon app.js",
-        "build": "webpack",
-        "test": "jest",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
+        "build": "react-scripts build",
         "coverage": "test"
     },
     "dependencies": {
