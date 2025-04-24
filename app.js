@@ -3,7 +3,7 @@ require('dotenv').config();
 const cors = require('cors');
 const path = require('path');
 const qrcodeRouter = require("./routes/qrcodePublic");
-const businessCard = require('./routes/businessCardPublic');
+const businessCardRouter = require('./routes/businessCardPublic');
 
 const express = require('express');
 const app = express();

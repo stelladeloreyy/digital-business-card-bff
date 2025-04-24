@@ -5,7 +5,6 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import SunLifeLogo from '';
 import './BusinessCard.css';
 
 const BusinessCard = ({ name, jobTitle, department, email, phoneNumber, profilePhotoUrl }) => {
@@ -15,7 +14,7 @@ const BusinessCard = ({ name, jobTitle, department, email, phoneNumber, profileP
                 <div>
                     <img 
                         alt="Sun Life Financial logo"
-                        src={SunLifeLogo}
+                        src='https://www.sunlife.ca/content/dam/sunlife/regional/global-marketing/images/com/Sun_Life_weblogo_127x31.svg'
                         className='sunlife-logo'
                     />
                 </div>

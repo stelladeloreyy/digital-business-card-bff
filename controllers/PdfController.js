@@ -26,7 +26,7 @@ class PdfController {
         doc.fontSize(6);
         doc.fillColor("#184A58").text(name, 30.5, 62, { width: doc.page.width });
 
-        doc.image('./assets/images/images/sunlife-logo.png', 30.5, 10, {height: 10 });
+        doc.image('./assets/images/sunlife-logo.png', 30.5, 10, {height: 10 });
         doc.image(qrCodePath, 100, 20, { width: 62 });
 
         if (department) {

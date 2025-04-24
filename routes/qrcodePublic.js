@@ -1,8 +1,8 @@
 const path = require('path');
 const express = require('express');
 const router = express.Router();
-const { PdfConroller, QrCodeController } = require('../controllers');
-const crypto = require('crypro');
+const { PdfController, QrCodeController } = require('../controllers');
+const crypto = require('crypto');
 
 const pdfController = new PdfController();
 const qrCodeController = new QrCodeController();
@@ -30,17 +30,20 @@ router.post('/generate', async (req, res) => {
 
     // generate qr code
     const qrCodeDestination = `${process.env.SERVER_URL}/business-card?name=${givenName}&email=${email}&jobTitle=${jobTitle}&phoneNumber=${phoneNumber}&department=${department}`;
-    const qrCodeFilePath = await qrCodeController.create(path.join(__dirname, '../static', pdfFileName), qrCodeFilePath, givenName, department, jobTitle, team);
+    const qrCodeFilePath = await qrCodeController.create(path.join(__dirname, '../static', qrCodeFileName), qrCodeDestination);
+
+    // generate PDF
+    await pdfController.create(path.join(__dirname, '../static', pdfFileName), qrCodeFilePath, givenName, department, jobTitle, team);
 
     res.json({
         qrCodeUrl: `${process.env.SERVER_URL}/static/${qrCodeFileName}`,
         pdfUrl: `${process.env.SERVER_URL}/qr-code/download/${fileName}`
     });
+});
 
-    router.get('/download/:name', (req, res) => {
-        const pdfPath = path.join(__dirname, '../static', `${req.params.name}.pdf`);
-        res.download(pdfPath);
-    });
+router.get('/download/:name', (req, res) => {
+    const pdfPath = path.join(__dirname, '../static', `${req.params.name}.pdf`);
+    res.download(pdfPath);
 });
 
 module.exports = router;
