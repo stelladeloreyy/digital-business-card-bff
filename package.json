@@ -5,8 +5,7 @@
     "scripts": {
         "start": "node app.js",
         "dev": "nodemon app.js",
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d build",
+        "vercel-build": "npm ci && npm run build",
         "build": "webpack",
         "test": "jest",
         "coverage": "test"
