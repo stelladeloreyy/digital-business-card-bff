@@ -5,8 +5,7 @@
     "scripts": {
         "start": "node app.js",
         "dev": "nodemon app.js",
-        "vercel-build": "npm ci && npm run build",
-        "build": "webpack",
+        "build": "chmod +x node_modules/.bin/vite && vite build",
         "test": "jest",
         "coverage": "test"
     },
