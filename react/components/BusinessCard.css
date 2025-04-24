@@ -1,11 +1,11 @@
 @font-face {
     font-family: SunLife;
-    src: url(./../../public/SunlifeNewDisplay-Regular.ttf);
+    src: url(./../../assets/fonts/SunLifeNewDisplay-Regular.ttf);
 }
 
 @font-face {
     font-familt: SunLifeBold;
-    src: url(./../../public/SunlifeDisplay-Bold.ttf);
+    src: url(./../../assets/fonts/SunLifeNewDisplay-Bold.ttf);
     font-weight: 1000;
 }
 
